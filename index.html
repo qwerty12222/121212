@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Never Dies - An Emotional Journey</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Background -->
+        <div class="background">
+            <img src="assets/background.svg" alt="Background scene" class="background-image">
+            <div class="war-overlay"></div>
+        </div>
+
+        <!-- Light beam effect -->
+        <div class="light-beam">
+            <img src="assets/light-beam.svg" alt="Light beam" class="light-beam-image">
+        </div>
+
+        <!-- Main stage area -->
+        <div class="stage">
+            <!-- Central boy character -->
+            <div class="character boy" id="boy">
+                <img src="assets/boy.svg" alt="Lonely boy" class="character-image">
+                <div class="tears"></div>
+            </div>
+
+            <!-- Family members -->
+            <div class="character father" id="father">
+                <img src="assets/father.svg" alt="Father" class="character-image">
+            </div>
+
+            <div class="character mother" id="mother">
+                <img src="assets/mother.svg" alt="Mother" class="character-image">
+            </div>
+
+            <!-- Friend character -->
+            <div class="character friend" id="friend">
+                <img src="assets/friend.svg" alt="Friend" class="character-image">
+            </div>
+
+            <!-- Loved one character -->
+            <div class="character loved-one" id="loved-one">
+                <img src="assets/loved-one.svg" alt="Loved one" class="character-image">
+            </div>
+        </div>
+
+        <!-- Final message -->
+        <div class="final-message" id="final-message">
+            <h1>Hope Never Dies</h1>
+        </div>
+
+        <!-- Audio controls -->
+        <div class="audio-controls">
+            <button id="play-pause-btn" class="audio-btn">▶️</button>
+            <button id="restart-btn" class="audio-btn">🔄</button>
+            <div class="volume-control">
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+            </div>
+        </div>
+
+        <!-- Story controls -->
+        <div class="story-controls">
+            <button id="start-story-btn" class="story-btn">Start Story</button>
+            <button id="restart-story-btn" class="story-btn">Restart Story</button>
+        </div>
+
+        <!-- Loading indicator -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading emotional journey...</p>
+        </div>
+    </div>
+
+    <!-- Audio element -->
+    <audio id="background-music" loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

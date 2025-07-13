@@ -1,0 +1,69 @@
+<svg width="100" height="160" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="motherSkinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#fdbcb4;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#ea9085;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="motherHairGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8b4513;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="motherClothesGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Body/Dress -->
+    <path d="M 25 65 Q 50 60 75 65 L 80 140 Q 50 145 20 140 Z" fill="url(#motherClothesGradient)"/>
+    
+    <!-- Arms -->
+    <rect x="12" y="68" width="15" height="40" fill="url(#motherClothesGradient)" rx="7"/>
+    <rect x="73" y="68" width="15" height="40" fill="url(#motherClothesGradient)" rx="7"/>
+    
+    <!-- Hands -->
+    <circle cx="19" cy="113" r="7" fill="url(#motherSkinGradient)"/>
+    <circle cx="81" cy="113" r="7" fill="url(#motherSkinGradient)"/>
+    
+    <!-- Legs -->
+    <rect x="35" y="140" width="12" height="25" fill="#f8c471" rx="6"/>
+    <rect x="53" y="140" width="12" height="25" fill="#f8c471" rx="6"/>
+    
+    <!-- Shoes -->
+    <ellipse cx="41" cy="155" rx="8" ry="3" fill="#8b4513"/>
+    <ellipse cx="59" cy="155" rx="8" ry="3" fill="#8b4513"/>
+    
+    <!-- Head -->
+    <circle cx="50" cy="32" r="24" fill="url(#motherSkinGradient)"/>
+    
+    <!-- Hair -->
+    <path d="M 26 22 Q 50 10 74 22 Q 72 35 68 32 Q 50 15 32 32 Q 28 35 26 22" fill="url(#motherHairGradient)"/>
+    <path d="M 26 22 Q 20 40 30 50 Q 40 45 35 35" fill="url(#motherHairGradient)"/>
+    <path d="M 74 22 Q 80 40 70 50 Q 60 45 65 35" fill="url(#motherHairGradient)"/>
+    
+    <!-- Eyes -->
+    <circle cx="43" cy="30" r="3" fill="#333"/>
+    <circle cx="57" cy="30" r="3" fill="#333"/>
+    <circle cx="44" cy="29" r="1" fill="#fff"/>
+    <circle cx="58" cy="29" r="1" fill="#fff"/>
+    
+    <!-- Eyelashes -->
+    <path d="M 41 27 L 40 25" stroke="#333" stroke-width="0.5"/>
+    <path d="M 44 26 L 44 24" stroke="#333" stroke-width="0.5"/>
+    <path d="M 47 27 L 48 25" stroke="#333" stroke-width="0.5"/>
+    <path d="M 53 27 L 52 25" stroke="#333" stroke-width="0.5"/>
+    <path d="M 56 26 L 56 24" stroke="#333" stroke-width="0.5"/>
+    <path d="M 59 27 L 60 25" stroke="#333" stroke-width="0.5"/>
+    
+    <!-- Nose -->
+    <ellipse cx="50" cy="34" rx="1.5" ry="1" fill="#d4a574"/>
+    
+    <!-- Mouth -->
+    <path d="M 46 39 Q 50 42 54 39" stroke="#c0392b" stroke-width="1.5" fill="none"/>
+    
+    <!-- Loving gesture arms -->
+    <g class="loving-gesture">
+        <path d="M 19 113 Q 30 100 40 95" stroke="url(#motherSkinGradient)" stroke-width="5" fill="none"/>
+        <path d="M 81 113 Q 70 100 60 95" stroke="url(#motherSkinGradient)" stroke-width="5" fill="none"/>
+    </g>
+</svg>

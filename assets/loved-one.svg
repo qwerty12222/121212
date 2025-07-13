@@ -1,0 +1,80 @@
+<svg width="95" height="155" viewBox="0 0 95 155" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="lovedSkinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#fdbcb4;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#ea9085;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="lovedHairGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="lovedClothesGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Body/Dress -->
+    <path d="M 22 62 Q 47 58 73 62 L 75 135 Q 47 140 20 135 Z" fill="url(#lovedClothesGradient)"/>
+    
+    <!-- Arms -->
+    <rect x="10" y="65" width="14" height="38" fill="url(#lovedClothesGradient)" rx="7"/>
+    <rect x="71" y="65" width="14" height="38" fill="url(#lovedClothesGradient)" rx="7"/>
+    
+    <!-- Hands -->
+    <circle cx="17" cy="108" r="7" fill="url(#lovedSkinGradient)"/>
+    <circle cx="78" cy="108" r="7" fill="url(#lovedSkinGradient)"/>
+    
+    <!-- Legs -->
+    <rect x="33" y="135" width="12" height="23" fill="#f8c471" rx="6"/>
+    <rect x="50" y="135" width="12" height="23" fill="#f8c471" rx="6"/>
+    
+    <!-- Shoes -->
+    <ellipse cx="39" cy="150" rx="8" ry="3" fill="#8b4513"/>
+    <ellipse cx="56" cy="150" rx="8" ry="3" fill="#8b4513"/>
+    
+    <!-- Head -->
+    <circle cx="47" cy="30" r="23" fill="url(#lovedSkinGradient)"/>
+    
+    <!-- Hair -->
+    <path d="M 24 20 Q 47 8 70 20 Q 68 32 64 30 Q 47 12 30 30 Q 26 32 24 20" fill="url(#lovedHairGradient)"/>
+    <path d="M 24 20 Q 18 38 28 48 Q 38 43 33 33" fill="url(#lovedHairGradient)"/>
+    <path d="M 70 20 Q 76 38 66 48 Q 56 43 61 33" fill="url(#lovedHairGradient)"/>
+    
+    <!-- Eyes - loving expression -->
+    <circle cx="41" cy="28" r="3" fill="#333"/>
+    <circle cx="53" cy="28" r="3" fill="#333"/>
+    <circle cx="42" cy="27" r="1" fill="#fff"/>
+    <circle cx="54" cy="27" r="1" fill="#fff"/>
+    
+    <!-- Heart-shaped pupils -->
+    <path d="M 41 28 Q 40 26 41 27 Q 42 26 41 28" fill="#e74c3c"/>
+    <path d="M 53 28 Q 52 26 53 27 Q 54 26 53 28" fill="#e74c3c"/>
+    
+    <!-- Eyelashes -->
+    <path d="M 38 25 L 37 23" stroke="#333" stroke-width="0.5"/>
+    <path d="M 41 24 L 41 22" stroke="#333" stroke-width="0.5"/>
+    <path d="M 44 25 L 45 23" stroke="#333" stroke-width="0.5"/>
+    <path d="M 50 25 L 49 23" stroke="#333" stroke-width="0.5"/>
+    <path d="M 53 24 L 53 22" stroke="#333" stroke-width="0.5"/>
+    <path d="M 56 25 L 57 23" stroke="#333" stroke-width="0.5"/>
+    
+    <!-- Nose -->
+    <ellipse cx="47" cy="32" rx="1.5" ry="1" fill="#d4a574"/>
+    
+    <!-- Mouth - loving smile -->
+    <path d="M 43 37 Q 47 40 51 37" stroke="#e74c3c" stroke-width="1.5" fill="none"/>
+    
+    <!-- Hugging gesture arms -->
+    <g class="hugging-gesture">
+        <path d="M 17 108 Q 30 95 40 90" stroke="url(#lovedSkinGradient)" stroke-width="5" fill="none"/>
+        <path d="M 78 108 Q 65 95 55 90" stroke="url(#lovedSkinGradient)" stroke-width="5" fill="none"/>
+    </g>
+    
+    <!-- Hearts floating around -->
+    <g class="floating-hearts" opacity="0.6">
+        <path d="M 15 45 Q 12 42 15 40 Q 18 42 15 45" fill="#e74c3c"/>
+        <path d="M 80 40 Q 77 37 80 35 Q 83 37 80 40" fill="#e74c3c"/>
+        <path d="M 25 25 Q 22 22 25 20 Q 28 22 25 25" fill="#e74c3c"/>
+    </g>
+</svg>
