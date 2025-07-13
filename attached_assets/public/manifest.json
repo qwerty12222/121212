@@ -1,0 +1,22 @@
+{
+  "name": "Gifts Boss",
+  "short_name": "GiftsBoss",
+  "description": "Open amazing gift cases and win real rewards!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/gifts-boss-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/gifts-boss-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
