@@ -5,13 +5,19 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Gift, Wallet, Settings, User, Trophy, Package, Crown, Sparkles, Loader2, Plus, Minus } from "lucide-react"
 import { TonConnectButton, useTonConnectUI, useTonWallet } from "@tonconnect/ui-react"
 import { GameImage } from "@/components/ui/game-image"
 import CaseOpeningModal from "@/components/ui/case-opening-modal"
+import { ResponsiveLayout, ResponsiveGrid } from "@/components/ui/responsive-layout"
+import { EnhancedButton } from "@/components/ui/enhanced-button"
+import { CaseCard } from "@/components/ui/case-card"
+import { ItemCard } from "@/components/ui/item-card"
+import { CaseOpeningAnimation } from "@/components/animations/CaseOpeningAnimation"
+import { motion, AnimatePresence } from "framer-motion"
 
 interface TelegramUser {
   id: number
@@ -95,6 +101,9 @@ export default function GiftsBossGame() {
   const [depositAmount, setDepositAmount] = useState(1)
   const [starsAmount, setStarsAmount] = useState(50)
   const [isNewUser, setIsNewUser] = useState(true)
+  const [showCaseAnimation, setShowCaseAnimation] = useState(false)
+  const [animationWonItem, setAnimationWonItem] = useState<GameItem | null>(null)
+  const [animationCase, setAnimationCase] = useState<GameCase | null>(null)
 
   const [tonConnectUI] = useTonConnectUI()
   const wallet = useTonWallet()
@@ -680,38 +689,45 @@ export default function GiftsBossGame() {
       setBalance((prev) => ({ ...prev, stars: prev.stars - totalCost }))
     }
 
-    // Simulate opening animation
-    setTimeout(() => {
-      // Select random item based on probability
-      const random = Math.random()
-      let cumulativeProbability = 0
-      let selectedItem = selectedCase.items[0]
+    // Close the case modal and start the animation
+    setShowCaseModal(false)
 
-      for (const item of selectedCase.items) {
-        cumulativeProbability += item.probability
-        if (random <= cumulativeProbability) {
-          selectedItem = item
-          break
-        }
+    // Select random item based on probability
+    const random = Math.random()
+    let cumulativeProbability = 0
+    let selectedItem = selectedCase.items[0]
+
+    for (const item of selectedCase.items) {
+      cumulativeProbability += item.probability
+      if (random <= cumulativeProbability) {
+        selectedItem = item
+        break
       }
+    }
 
-      console.log("Won item:", selectedItem)
+    console.log("Won item:", selectedItem)
 
-      setWonItem(selectedItem)
-      setInventory((prev) => [...prev, selectedItem])
-      setIsOpening(false)
+    // Set up the ultra HD animation
+    setAnimationWonItem(selectedItem)
+    setAnimationCase(selectedCase)
+    setShowCaseAnimation(true)
 
-      // Close modal after animation
-      setTimeout(() => {
-        setShowCaseModal(false)
-        setShowResult(true)
-      }, 1000)
+    // Haptic feedback
+    if (typeof window !== "undefined" && window.Telegram?.WebApp?.HapticFeedback) {
+      window.Telegram.WebApp.HapticFeedback.notificationOccurred("success")
+    }
+  }
 
-      // Haptic feedback
-      if (typeof window !== "undefined" && window.Telegram?.WebApp?.HapticFeedback) {
-        window.Telegram.WebApp.HapticFeedback.notificationOccurred("success")
-      }
-    }, 4000)
+  const handleAnimationComplete = () => {
+    if (animationWonItem) {
+      setInventory((prev) => [...prev, animationWonItem])
+      setWonItem(animationWonItem)
+      setShowResult(true)
+    }
+    setShowCaseAnimation(false)
+    setIsOpening(false)
+    setAnimationWonItem(null)
+    setAnimationCase(null)
   }
 
   const closeResult = () => {
@@ -1204,11 +1220,22 @@ export default function GiftsBossGame() {
         language={language}
       />
 
+      {/* Ultra HD Case Opening Animation */}
+      <CaseOpeningAnimation
+        isOpen={showCaseAnimation}
+        onComplete={handleAnimationComplete}
+        wonItem={animationWonItem}
+        caseImage={animationCase?.image || ""}
+      />
+
       {/* Result Dialog */}
       <Dialog open={showResult} onOpenChange={closeResult}>
         <DialogContent className="bg-gray-900 border-gray-700 max-w-xs mx-auto">
           <DialogHeader>
             <DialogTitle className="text-center text-lg font-bold text-yellow-500">{t.congratulations}</DialogTitle>
+            <DialogDescription className="text-center text-gray-300">
+              {t.youWon}
+            </DialogDescription>
           </DialogHeader>
           {wonItem && (
             <div className="text-center space-y-4 py-4">
